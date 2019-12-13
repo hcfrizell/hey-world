@@ -3,6 +3,8 @@ import React from "react"
 import styles from "./about-css-modules.module.css"
 import Container from "../components/container"
 
+import {graphql} from "gatsby"
+
 console.log( styles )
 
 const User = props => (
@@ -15,8 +17,19 @@ const User = props => (
     </div>
 )
 
-export default () => (
+export const query = graphql`
+    query {
+        site {
+            siteMetadata {
+                title
+            }
+        }
+    }
+`
+
+export default ({data}) => (
     <Container >
+        <h1 >{data.site.siteMetadata.title}</h1>
         <h1 >About CSS Modules</h1>
         <p>CSS Modules are here</p>
 
