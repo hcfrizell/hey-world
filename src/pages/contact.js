@@ -9,7 +9,7 @@ export default () => (
     <Layout pageName="contact" >
         <Header headerText="Contacts" />
 
-        <p>contacts go here...
+        <p>This is a new contact line
         </p>
     </Layout>
 )
