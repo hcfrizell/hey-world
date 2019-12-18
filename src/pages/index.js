@@ -11,9 +11,9 @@ export default () => (
 
         <RandomImg />
 
-        <h1>Hi! I'm building a fake Gatsby site as part of a tutorial!</h1>
+        <h1>Hi! This ia Gatsby site - Just trying to learn things...!</h1>
         <p>
-        What do I like to do? Lots of course but definitely enjoy building
+        Paragraph here about items, things, objects, places... 
         websites.
         </p>
     </Layout>

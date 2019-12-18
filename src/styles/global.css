@@ -1,3 +1,11 @@
 html {
     background: lavenderblush;
 }
+
+.line-bottom {
+    border-bottom: 1px solid #aaa;
+}
+.line-top {
+    border-top: 1px solid #aaa;
+    padding: 5px 0px 0px 0px;
+}

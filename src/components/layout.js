@@ -14,8 +14,8 @@ export default (props) => (
 
             {props.children}
 
-            <h4>Anything in here</h4>
-            <p>STUFF: {props.pageName.toUpperCase()}</p>
+            <h5 class="line-top" >Data</h5>
+            <p>props.pageName: {props.pageName}</p>
         </div>
     </div>
 )
