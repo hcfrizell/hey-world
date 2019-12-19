@@ -8,6 +8,7 @@ import Container from "../components/container"
 const menuList = [
     {path:"about", name: "About Page 2"}
     ,{path:"contact", name: "Contact"}
+   // ,{path:"panda", name: "Pandas"}
     ,{path:"file-list", name: "File List"}
 ]
 

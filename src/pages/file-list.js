@@ -2,12 +2,29 @@ import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
 
+export const query = graphql`
+    query {
+        allFile(
+            sort: { fields: [relativePath], order: ASC }
+            , filter: { relativeDirectory: {ne: "utils"} }
+        ) {
+            edges {
+                node {
+                    relativePath
+                    prettySize
+                    extension
+                    birthTime( fromNow: true )
+                }
+            }
+        }
+    }
+`
 
 export default ( {data} ) => {
     console.log( "The DATA", data );
 
     return ( 
-        <Layout >
+        <Layout pageName="file-list" >
             <div > 
                 <h2>File List </h2>
 
@@ -35,18 +52,3 @@ export default ( {data} ) => {
         </Layout >
     )
 }
-
-export const query = graphql`
-    query {
-        allFile {
-            edges {
-                node {
-                    relativePath
-                    prettySize
-                    extension
-                    birthTime( fromNow: true )
-                }
-            }
-        }
-    }
-`
