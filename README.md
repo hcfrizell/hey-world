@@ -8,7 +8,7 @@
   Gatsby's default starter
 </h1>
 
-** Yep, just a hello world site...
+**Yep, just a hello world site...**
 
 
 Kick off your project with this default boilerplate. This starter ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
