@@ -14,7 +14,7 @@ export default (props) => (
 
             {props.children}
 
-            <h5 class="line-top" >Data</h5>
+            <h5 className={'line-top'} >Data</h5>
             <p>props.pageName: {props.pageName}</p>
         </div>
     </div>
