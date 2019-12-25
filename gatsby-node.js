@@ -4,10 +4,7 @@
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
 
-// You can delete this file if you're not using it
-
 console.log("DOES THIS WORK?")
-
 
 const path = require(`path`)
 const { createFilePath } = require( `gatsby-source-filesystem` )
@@ -48,7 +45,7 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   `)
 
-  console.log(JSON.stringify(result, null, 4))   
+  console.log("INDO 1", JSON.stringify(result, null, 4))   
 
   result.data.allMarkdownRemark.edges.forEach(( {node } ) => {
     createPage({
@@ -60,8 +57,6 @@ exports.createPages = async ({ graphql, actions }) => {
         }
     })
   })
-
-
 
 }
         

@@ -12,6 +12,7 @@ const menuList = [
     ,{path:"file-list", name: "File List"}
 ]
 
+
 const ListLink = props => (
     <li style={{ display: "inline-block", marginRight: "1em" }} >
         <Link to={props.to}>{props.children}</Link>
@@ -20,6 +21,15 @@ const ListLink = props => (
 
 export const query = graphql`
     query {
+        allMarkdownRemark {
+            edges {
+                node {
+                    frontmatter {
+                        title
+                    }
+                }
+            }
+        }
         site {
             siteMetadata {
                 title
@@ -27,8 +37,11 @@ export const query = graphql`
         }
     }
 `
+//const siteTitle = query.site.siteMetadata.title;
 
-export default (props) => (
+//console.log( query.site  )
+
+export default (props, {data}) => (
     <Container >
         <Console log={props} />
 
@@ -41,19 +54,11 @@ export default (props) => (
 
             <div style={{ display:"inline-block", marginLeft: "4em" }} >{props.pageName}</div>
 
-            {/*
-            <ul style={{ listStyle: "none", float: "right" }} >
-                <ListLink to="/file-list/">File List</ListLink>
-                <ListLink to="/contact/">Contacts</ListLink>
-                <ListLink to="/about/">About Page</ListLink>
-            </ul>
-            */}
-
             <ul style={{ listStyle: "none", float: "right" }} >
                 {menuList.map( function(obj) {
-                    console.log( "OBJ", obj)
+                    console.log( "OBJ", obj )
                     let path = `/${obj.path}/`;
-                    console.log( "OBJ PATH", path)
+                    console.log( "OBJ PATH", path )
 
                     return <ListLink to={path} >{obj.name}</ListLink>
                 })}

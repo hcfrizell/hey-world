@@ -8,21 +8,21 @@ import Menu from "../components/menu"
 import Layout from "../components/layout"
 
 export const query = graphql`
-query {
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
-        totalCount
-        edges {
-            node {
-                id
-                frontmatter {
-                    title
-                    date(formatString: "DD MMMM, YYYY")
+    query {
+        allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+            totalCount
+            edges {
+                node {
+                    id
+                    frontmatter {
+                        title
+                        date(formatString: "DD MMMM, YYYY")
+                    }
+                    excerpt
                 }
-                excerpt
             }
         }
     }
-}
 `
 
 export default ( {data} ) => {
